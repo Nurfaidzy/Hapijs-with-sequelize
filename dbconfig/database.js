@@ -1,18 +1,9 @@
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize("hapi_tutorial", "root", "", {
+const sequelize = new Sequelize("belajar", "postgres", "pgakulaku", {
   host: "localhost",
-  port: 3306,
-  dialect: "mysql",
+  port: 5432,
+  dialect: "postgres",
 });
 
 module.exports.database = sequelize;
-
-// sequelize
-//   .authenticate()
-//   .then(() => {
-//     console.log("Connect to db");
-//   })
-//   .catch((err) => {
-//     console.log("err", err);
-//   });
