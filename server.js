@@ -1,10 +1,18 @@
 const Hapi = require("@hapi/hapi");
+const Inert = require("@hapi/inert");
+
 const rute = require("./route/route");
 const init = async () => {
   const server = Hapi.server({
     host: "localhost",
     port: 3200,
   });
+
+  await server.register([
+    {
+      plugin: Inert,
+    },
+  ]);
 
   server.route(rute.route);
 
